@@ -92,4 +92,12 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.google.dagger.hilt.android)
     ksp(libs.google.dagger.hilt.android.compiler)
+
+    // Room Paging artifact
+    implementation ("androidx.room:room-paging:2.6.1")
+
+    // Paging dependencies
+    implementation ("androidx.paging:paging-runtime-ktx:3.3.2")
+    implementation ("androidx.paging:paging-compose:3.3.2")
+
 }

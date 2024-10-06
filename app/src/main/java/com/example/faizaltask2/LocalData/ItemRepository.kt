@@ -1,6 +1,6 @@
 package com.example.faizaltask2.LocalData
 
-import com.example.faizaltaskelluminati.LocalData.ItemDao
+import androidx.paging.PagingSource
 import com.example.faizaltaskelluminati.LocalData.Items
 import kotlinx.coroutines.flow.Flow
 
@@ -13,4 +13,8 @@ class ItemRepository(private val itemDao: ItemDao) {
     suspend fun updateItem(item: Items) = itemDao.updateItem(item)
 
     suspend fun deleteItem(item: Items) = itemDao.deleteItem(item)
+
+    fun getNotePagingSource(): PagingSource<Int, Items> {
+        return itemDao.getAllNotesPaginated()
+    }
 }

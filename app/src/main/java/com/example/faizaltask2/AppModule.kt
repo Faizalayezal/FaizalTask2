@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.faizaltask2.LocalData.ItemRepository
 import com.example.faizaltaskelluminati.LocalData.AppDatabase
-import com.example.faizaltaskelluminati.LocalData.ItemDao
+import com.example.faizaltask2.LocalData.ItemDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

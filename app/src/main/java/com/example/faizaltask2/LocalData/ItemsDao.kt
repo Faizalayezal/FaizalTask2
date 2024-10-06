@@ -1,14 +1,13 @@
-package com.example.faizaltaskelluminati.LocalData
+package com.example.faizaltask2.LocalData
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Delete
-import androidx.room.Entity
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Update
-import androidx.room.Upsert
+import com.example.faizaltaskelluminati.LocalData.Items
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -16,6 +15,9 @@ interface ItemDao {
 
     @Query("SELECT * FROM Items")
     fun getAllItems(): Flow<List<Items>>
+
+    @Query("SELECT * FROM Items")
+    fun getAllNotesPaginated(): PagingSource<Int, Items>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertItem(item: Items)
